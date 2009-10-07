@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<biblioteca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi="biblioteca.xsd">
+    <livro id="b8562734462" disponivel="true">
+        <isbn>8562734462</isbn>
+        <titulo ling="pt">Livro bem legal</titulo>
+        <autor id="JCS">
+            <nome>João da Costa e Silva</nome>
+            <dataNascimento>1922-11-26</dataNascimento>
+            <morreu>2001-02-12</morreu>
+        </autor>
+        <personagem id="P1">
+            <nome>Personagem 1</nome>
+            <dataNascimento>1976-08-22</dataNascimento>
+            <caracteristica>alegre gentil</caracteristica>
+        </personagem>
+        <personagem id="P2">
+            <nome>Personagem 2</nome>
+            <dataNascimento>1954-10-04</dataNascimento>
+            <caracteristica>extrovertido legal</caracteristica>
+        </personagem>
+        <personagem id="P3">
+            <nome>Personagem 3</nome>
+            <dataNascimento>1971-05-30</dataNascimento>
+            <caracteristica>nervoso</caracteristica>
+        </personagem>
+    </livro>
+</biblioteca>

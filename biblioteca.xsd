@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="nome" type="xs:string" />
+	<xs:element name="caracteristica" type="xs:string" />
+	<xs:element name="dataNascimento" type="xs:date" />
+	<xs:element name="morreu" type="xs:date" />
+	<xs:element name="isbn" type="xs:string" />
+	<xs:attribute name="id" type="xs:ID" />
+	<xs:attribute name="disponivel" type="xs:boolean" />
+	<xs:attribute name="ling" type="xs:language" />
+	<xs:element name="titulo">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute ref="ling" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="biblioteca">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="livro" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="autor">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="nome" />
+				<xs:element ref="dataNascimento" />
+				<xs:element ref="morreu" minOccurs="0" />
+			</xs:sequence>
+			<xs:attribute ref="id" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="livro">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="isbn" />
+				<xs:element ref="titulo" />
+				<xs:element ref="autor" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="personagem" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+			<xs:attribute ref="id" />
+			<xs:attribute ref="disponivel" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="personagem">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="nome" />
+				<xs:element ref="dataNascimento" />
+				<xs:element ref="caracteristica" />
+			</xs:sequence>
+			<xs:attribute ref="id" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
